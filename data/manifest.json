@@ -1,0 +1,50 @@
+{
+  "format_version": 1,
+  "benchmarks": {
+    "medqa": {
+      "N": 1259,
+      "content_sha256": "7f5624aba338a5e0b63e7530d595d846aa06de362ed6433bc631dc22de5e810d",
+      "original_file_sha256": "68fb47e41f412edc4c8c0051a4eca41ba4a85a3b814cc96aee7ec3c73daa18a4"
+    },
+    "medmcqa": {
+      "N": 1000,
+      "content_sha256": "54518012cb32ad3a07362e63ee25785fa1f3acd082beda32f562963ef5d0d7f0",
+      "original_file_sha256": "b5b40a7550e4bc8c15f07383f212f30381a5d80d1ed862efbce90a8370a5414a"
+    },
+    "mmlu": {
+      "N": 895,
+      "content_sha256": "85744b7715136e808303a35e48b70a4d567aaa64fa146328b581f30c81872b46",
+      "original_file_sha256": "e5de694ce0a63fb6ff16284921fc78e40419c3e3a10b6222a72011834d51962f"
+    },
+    "openbookqa": {
+      "N": 500,
+      "content_sha256": "cf66b16772e5b4ecb9006597b083cf3223e3db99d4ab465d3f8a942cb86d9589",
+      "original_file_sha256": "bda1f04db9c35cc2ac67664fe1e3999197f124108e49faf0d1ec9f33cdb081fe"
+    }
+  },
+  "models": [
+    "Gemini-2.5-Flash",
+    "Qwen2.5-7B-Instruct",
+    "Gemma-3-12B-IT",
+    "Llama3-Med42-8B",
+    "DeepSeek-V4-Flash",
+    "DeepSeek-V4-Pro"
+  ],
+  "risk_models": [
+    "Gemini-2.5-Flash",
+    "Qwen2.5-7B-Instruct",
+    "Gemma-3-12B-IT",
+    "Llama3-Med42-8B"
+  ],
+  "coverages_pct": [
+    10,
+    20,
+    30,
+    40
+  ],
+  "medical_source_commit": "2caa66392f5d7c9632d8c24d6a9391df79c6555a",
+  "original_ledger_sha256": "c60345315bd356d735e7ae351434480ee8353033bfdc43ac53998bbfe0acd3cf",
+  "predictions_sha256": "bcb2222bf81d604b7ec159fa16944d69aeff592a4addc6a66e16cf15f34935fd",
+  "prediction_rows": 21924,
+  "probability_imputed_rows": 13
+}

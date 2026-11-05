@@ -1,0 +1,17 @@
+model,dataset,N,recall10_pct,recall20_pct,recall30_pct,recall40_pct
+Gemini-2.5-Flash,medqa,1259,36.88,65.63,79.38,88.13
+Gemini-2.5-Flash,medmcqa,1000,22.62,45.25,62.90,77.83
+Gemini-2.5-Flash,mmlu,895,54.79,84.93,90.41,93.15
+Gemini-2.5-Flash,openbookqa,500,57.58,84.85,96.97,100.00
+Qwen2.5-7B-Instruct,medqa,1259,16.11,30.65,43.42,55.60
+Qwen2.5-7B-Instruct,medmcqa,1000,16.67,30.41,45.72,56.98
+Qwen2.5-7B-Instruct,mmlu,895,27.10,48.13,64.49,81.78
+Qwen2.5-7B-Instruct,openbookqa,500,40.96,65.06,80.72,92.77
+Gemma-3-12B-IT,medqa,1259,16.80,32.78,45.64,57.88
+Gemma-3-12B-IT,medmcqa,1000,15.33,29.75,43.48,56.75
+Gemma-3-12B-IT,mmlu,895,28.26,49.46,67.93,82.07
+Gemma-3-12B-IT,openbookqa,500,37.35,67.47,80.72,90.36
+Llama3-Med42-8B,medqa,1259,18.45,32.91,47.59,60.38
+Llama3-Med42-8B,medmcqa,1000,15.95,32.15,47.09,61.52
+Llama3-Med42-8B,mmlu,895,25.76,47.16,62.01,75.55
+Llama3-Med42-8B,openbookqa,500,27.68,54.46,74.11,85.71
