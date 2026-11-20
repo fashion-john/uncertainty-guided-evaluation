@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived release."
+title: "Uncertainty-Guided Low-Resource LLM Evaluation"
+type: software
+authors:
+  - family-names: "fashion-john"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/fashion-john/uncertainty-guided-evaluation"
+url: "https://github.com/fashion-john/uncertainty-guided-evaluation"
+doi: "10.5281/zenodo.24384199"
+date-released: 2026-11-20
