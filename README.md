@@ -1,10 +1,10 @@
 # Uncertainty-Guided Low-Resource LLM Evaluation
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24384199.svg)](https://doi.org/10.5281/zenodo.24384199)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24384526.svg)](https://doi.org/10.5281/zenodo.24384526)
 
-Archived version **1.0.0**: https://doi.org/10.5281/zenodo.24384199.
-The archive fixes source commit `69e2a4310e9d975823248b121a2c3941a756f81b`.
-The current main branch also includes the supplied table updates described below.
+Archived version **1.0.1**: https://doi.org/10.5281/zenodo.24384526.
+This version includes the supplied Table 5.4 updates described below.
+All versions: https://doi.org/10.5281/zenodo.24384198.
 
 Minimal code for three-view answer evaluation and uncertainty-guided question selection.
 
