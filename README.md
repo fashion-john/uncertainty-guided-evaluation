@@ -4,6 +4,7 @@
 
 Archived version **1.0.0**: https://doi.org/10.5281/zenodo.24384199.
 The archive fixes source commit `69e2a4310e9d975823248b121a2c3941a756f81b`.
+The current main branch also includes the supplied table updates described below.
 
 Minimal code for three-view answer evaluation and uncertainty-guided question selection.
 
@@ -16,11 +17,20 @@ python reproduce.py --check
 python -m unittest -q
 ```
 
-`python reproduce.py` regenerates the five CSV tables in `results/` from
-`data/predictions.csv.gz`. The archive contains 21,924 per-question records:
+`python reproduce.py` regenerates the five reported CSV tables in `results/`
+from `data/predictions.csv.gz` and the supplied summaries in
+`data/table54_reported.csv`. The prediction archive contains 21,924 per-question records:
 parsed predictions for all three views, gold labels, option identity mappings,
 and original candidate probabilities where used. Question texts, credentials,
 model weights and server logs are not included.
+
+The supplied summaries set Gemma-3-12B-IT / OpenBookQA Lift@10 to **4.521**
+(Entropy) and **4.467** (Max-prob), following the supervisor-provided manuscript
+table received on 2026-11-20. Their source is recorded in `data/table54_reported.csv`.
+These two supplied values are independent of the bundled per-question predictions.
+`python reproduce.py --raw` writes prediction-only results to `results_raw/`,
+where both values are 4.333. Custom `--input` runs also calculate from predictions
+without applying the supplied table updates.
 
 | Dataset | Questions |
 | --- | ---: |
@@ -115,8 +125,8 @@ provider's model ID with `--model` and endpoint with `--api-base`.
 `--dry-run` validates a benchmark and prints a prompt without calling a model.
 Completed questions are resumed automatically. `--limit` supports smoke runs;
 table generation requires complete dataset populations. New inference results
-depend on checkpoint/provider versions; the bundled archive fixes the results
-used for these tables.
+depend on checkpoint/provider versions; the bundled prediction archive fixes the
+per-question results used for these tables.
 
 ```bash
 python reproduce.py --input runs/qwen_medqa.csv --output results_new

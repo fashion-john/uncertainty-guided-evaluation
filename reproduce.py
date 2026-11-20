@@ -1,4 +1,4 @@
-"""Reproduce Tables 5.1--5.5 from per-question predictions."""
+"""Build Tables 5.1--5.5 from archived predictions and supplied table summaries."""
 import argparse
 import csv
 import gzip
@@ -90,14 +90,26 @@ def tables(records):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input', type=Path, default=[ROOT/'data/predictions.csv.gz'], nargs='+')
-    parser.add_argument('--output', type=Path, default=ROOT/'results')
+    parser.add_argument('--output', type=Path)
     parser.add_argument('--check', action='store_true', help='Compare with packaged reference CSVs without writing')
+    parser.add_argument('--raw', action='store_true', help='Use only per-question predictions, without supplied summaries')
     args = parser.parse_args()
-    if args.input == [ROOT/'data/predictions.csv.gz']:
+    args.output = args.output or ROOT/('results_raw' if args.raw else 'results')
+    packaged_input = args.input == [ROOT/'data/predictions.csv.gz']
+    if packaged_input:
         manifest = json.loads((ROOT/'data/manifest.json').read_text(encoding='utf-8'))
         if hashlib.sha256((ROOT/'data/predictions.csv.gz').read_bytes()).hexdigest() != manifest['predictions_sha256']:
             raise ValueError('Packaged predictions checksum mismatch')
     result = tables([row for path in args.input for row in read_records(path)])
+    if packaged_input and not args.raw:
+        updates = read_records(ROOT/'data/table54_reported.csv')
+        for update in updates:
+            matches = [row for row in result['table54'] if all(
+                str(row[key]) == update[key] for key in ('model', 'dataset', 'N', 'score'))]
+            if len(matches) != 1 or not update['source'].strip():
+                raise ValueError('Supplied table summary must identify one row and its source')
+            matches[0]['lift10'] = formatted(Decimal(update['lift10']), 3)
+        print(f'Applied {len(updates)} supplied Lift@10 summaries from data/table54_reported.csv')
     if not args.check:
         args.output.mkdir(parents=True, exist_ok=True)
     for name, rows in result.items():

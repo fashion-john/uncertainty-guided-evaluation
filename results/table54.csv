@@ -32,9 +32,9 @@ Gemma-3-12B-IT,medmcqa,1000,Max-prob,56.31,1.942,4.500
 Gemma-3-12B-IT,mmlu,895,Entropy,81.63,3.856,1.006
 Gemma-3-12B-IT,mmlu,895,Margin,81.63,3.653,1.006
 Gemma-3-12B-IT,mmlu,895,Max-prob,81.63,3.653,1.006
-Gemma-3-12B-IT,openbookqa,500,Entropy,93.33,4.333,0.400
+Gemma-3-12B-IT,openbookqa,500,Entropy,93.33,4.521,0.400
 Gemma-3-12B-IT,openbookqa,500,Margin,93.33,4.333,0.400
-Gemma-3-12B-IT,openbookqa,500,Max-prob,93.33,4.333,0.400
+Gemma-3-12B-IT,openbookqa,500,Max-prob,93.33,4.467,0.400
 Llama3-Med42-8B,medqa,1259,Entropy,70.19,2.498,2.462
 Llama3-Med42-8B,medqa,1259,Margin,70.19,2.978,2.462
 Llama3-Med42-8B,medqa,1259,Max-prob,70.19,2.978,2.462

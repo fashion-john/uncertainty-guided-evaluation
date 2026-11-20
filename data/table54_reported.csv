@@ -1,0 +1,3 @@
+model,dataset,N,score,lift10,source
+Gemma-3-12B-IT,openbookqa,500,Entropy,4.521,Supervisor-provided manuscript table received 2026-11-20
+Gemma-3-12B-IT,openbookqa,500,Max-prob,4.467,Supervisor-provided manuscript table received 2026-11-20
